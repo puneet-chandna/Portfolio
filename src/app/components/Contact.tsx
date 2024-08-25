@@ -10,17 +10,35 @@ export default function Contact() {
     email: '',
     message: ''
   })
+  const [status, setStatus] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend or a service like Formspree
-    console.log('Form submitted:', formData)
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' })
+    setStatus('Sending...')
+
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setStatus('Message sent successfully!')
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        setStatus('Failed to send message. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      setStatus('An error occurred. Please try again later.')
+    }
   }
 
   return (
@@ -66,9 +84,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="md:w-1/2 space-y-4"
             initial={{ opacity: 0, x: 50 }}
-            whileInView={{
-
- opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
@@ -116,6 +132,7 @@ export default function Contact() {
             >
               Send Message
             </motion.button>
+            {status && <p className="text-center mt-4">{status}</p>}
           </motion.form>
         </div>
       </div>
