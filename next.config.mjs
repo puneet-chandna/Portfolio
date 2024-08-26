@@ -1,11 +1,11 @@
-/** @type {import('next').NextConfig} */
+
+  /** @type {import('next').NextConfig} */
 const nextConfig = {
-    trailingSlash: true, 
+    output: 'export', 
+    trailingSlash: true,
     images: {
-      unoptimized: true, 
-    },
-    basePath: '/portfolio-frontend', // Replace with your GitHub repository name
+      unoptimized: true,
+    }, 
   };
   
   export default nextConfig;
-  
