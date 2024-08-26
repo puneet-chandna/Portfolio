@@ -78,6 +78,10 @@ export default function Contact() {
               <a href="https://github.com/puneet-chandna" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
                 GitHub
               </a>
+              <a href="https://x.com/puneet_chandna_" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
+                X
+              </a>
+              
             </div>
           </motion.div>
           <motion.form 
