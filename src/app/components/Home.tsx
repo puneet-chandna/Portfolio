@@ -38,7 +38,7 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Image 
-            src="/placeholder.svg" 
+            src="/profile_tbg.png" 
             alt="Puneet Chandna" 
             width={400} 
             height={400} 

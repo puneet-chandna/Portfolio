@@ -15,6 +15,9 @@ export default function Footer() {
             <Link href="https://linkedin.com/in/puneet-chandna2004" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
               LinkedIn
             </Link>
+            <Link href="https://x.com/puneet_chandna_" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
+              X
+            </Link>
           </div>
         </div>
       </div>

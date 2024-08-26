@@ -7,28 +7,28 @@ const projects = [
   {
     title: 'BookMyEvent',
     description: 'Created a sophisticated event management application that integrated real-time QR code scanning with an ESP32 kit; system now processes over 10,000 ticket authentications per event, streamlining operations and improving customer satisfaction.',
-    image: '/placeholder.svg',
+    image: '/Untitled design.png',
     tags: ['Node.js', 'Express.js', 'Computer Vision', 'ESP32', 'Flutter', 'MongoDB'],
     date: 'March 2024'
   },
   {
     title: 'Octagenius 16',
     description: 'Self-designed 8-bit CPU with a 16-instruction set based on RISC architecture.',
-    image: '/placeholder.svg',
+    image: '/RISC-Processor16-bit-RISC.ppm',
     tags: ['Simulator.io'],
     date: 'October 2023'
   },
   {
     title: 'Gemini Clone',
     description: 'Developed a fully functional Gemini clone using React. The application simulates the Gemini platform\'s core features and integrates with a Gemini API for real-time data retrieval. Users can interact with the interface similarly to the original Gemini platform.',
-    image: '/placeholder.svg',
+    image: '/Gemini_SS.jpg',
     tags: ['React', 'JavaScript', 'CSS', 'HTML'],
     date: 'August 2024'
   },
   {
     title: 'Smart Pill Dispenser',
     description: 'Developed an advanced medicine dispenser incorporating a GSM module and fingerprint sensor for secure authentication; the system ensures accurate dosage delivery and enhances patient safety.',
-    image: '/placeholder.svg',
+    image: '/How-Smart-Pill-Dispensers-Use-IoT-to-Enhance-Patient-Care.jpg',
     tags: ['SolidWorks', 'Arduino', 'GSM'],
     date: 'November 2023'
   }
