@@ -1,7 +1,9 @@
 ```markdown
 # My Portfolio
 
-Welcome to my portfolio website built with Next.js and Tailwind CSS. This site showcases my skills, projects, and experience as a Full-Stack Developer. 
+Welcome to my portfolio website built with Next.js and Tailwind CSS. This site showcases my skills, projects, and experience as a Full-Stack Developer.
+THis websit is currently live, visit  **[Puneet Chandna](https://www.puneetchandna.co)**
+to check it out :)
 
 ## 🚀 Getting Started
 
