@@ -23,7 +23,7 @@ export default function Header() {
       transition={{ duration: 0.5 }}
     >
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">Puneet</Link>
+        <Link href="/" className="text-2xl font-bold m-2">Puneet</Link>
         <ul className="flex space-x-6">
           {['Home', 'About', 'Projects', 'Experience', 'Contact'].map((item) => (
             <li key={item}>

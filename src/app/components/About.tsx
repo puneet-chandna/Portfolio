@@ -45,7 +45,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-semibold mb-4">Skills</h3>
+            <h3 className="text-xl font-semibold mb-4 m-4">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
                 <motion.span 
