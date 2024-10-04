@@ -1,14 +1,28 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center">
+    <section 
+      id="home" 
+      className={`min-h-[calc(100vh-4rem)] flex items-center justify-center transition-all duration-300 ${isScrolled ? 'pt-0' : 'pt-20'}`}
+    >
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
         <motion.div 
-          className="md:w-1/2"
+          className="md:w-1/2 flex-grow"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}

@@ -64,8 +64,8 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
             <p className="mb-4">Feel free to reach out to me for any inquiries or opportunities.</p>
             <div className="flex items-center mb-2">
-              <PhoneIcon className="mr-2" />
-              <p>+91-9079429918</p>
+              <MailIcon className="mr-2" />
+              <p>puneetchandna7@gmail.com</p>
             </div>
             <div className="flex items-center mb-4">
               <MailIcon className="mr-2" />
