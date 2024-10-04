@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { PhoneIcon, MailIcon } from 'lucide-react'
+import { MailIcon } from 'lucide-react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ export default function Contact() {
     setStatus('Sending...')
 
     try {
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,10 +30,12 @@ export default function Contact() {
       })
 
       if (response.ok) {
-        setStatus('Message sent successfully!')
+        const data = await response.json()
+        setStatus(data.message || 'Message sent successfully!')
         setFormData({ name: '', email: '', message: '' })
       } else {
-        setStatus('Failed to send message. Please try again.')
+        const errorData = await response.json()
+        setStatus(errorData.error || 'Failed to send message. Please try again.')
       }
     } catch (error) {
       console.error('Error sending message:', error)
@@ -81,7 +83,6 @@ export default function Contact() {
               <a href="https://x.com/puneet_chandna_" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
                 X
               </a>
-              
             </div>
           </motion.div>
           <motion.form 
