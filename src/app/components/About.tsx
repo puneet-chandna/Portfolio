@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 
 const skills = [
-  'Python', 'C++', 'C', 'HTML', 'CSS', 'JavaScript', 'Bash',
-  'Git', 'Docker', 'Amazon Web Services', 'React', 'Node.js', 'Express.js'
+  'C++', 'C', 'HTML', 'CSS', 'JavaScript', 'Bash',
+  'Git', 'Docker', 'Amazon Web Services', 'React', 'Node.js', 'Express.js', 'next.js', 'SQL'
 ]
 
 export default function About() {
