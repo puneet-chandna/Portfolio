@@ -15,7 +15,7 @@ To run this project locally, follow these steps:
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/puneet-chandna/portfolio-frontend.git
+git clone https://github.com/puneet-chandna/Portfolio.git
 ```
 
 ### 2. Navigate to the Project Directory
@@ -23,7 +23,7 @@ git clone https://github.com/puneet-chandna/portfolio-frontend.git
 Change into the project directory:
 
 ```bash
-cd portfolio-frontend
+cd Portfolio
 ```
 
 ### 3. Install Dependencies
@@ -64,7 +64,7 @@ This project leverages the following technologies:
 
 Here's an overview of the project structure:
 
-- **`pages/`**: Contains the application's main pages.
+- **`src/app/`**: Contains the application's main pages.
 - **`components/`**: Reusable React components used throughout the site.
 - **`styles/`**: Global styles and Tailwind CSS configuration.
 - **`public/`**: Static assets like images, fonts, and icons.
