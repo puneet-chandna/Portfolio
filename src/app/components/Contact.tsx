@@ -29,13 +29,13 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
-        const data = await response.json()
         setStatus(data.message || 'Message sent successfully!')
         setFormData({ name: '', email: '', message: '' })
       } else {
-        const errorData = await response.json()
-        setStatus(errorData.error || 'Failed to send message. Please try again.')
+        setStatus(data.error || 'Failed to send message. Please try again.')
       }
     } catch (error) {
       console.error('Error sending message:', error)

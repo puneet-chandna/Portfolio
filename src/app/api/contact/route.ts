@@ -1,30 +1,18 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-interface MailRequestBody {
-  name: string;
-  email: string;
-  message: string;
-}
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
-  }
-
-  const { name, email, message }: MailRequestBody = req.body;
+export async function POST(request: Request) {
+  const body = await request.json();
+  const { name, email, message } = body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({ error: 'All fields are required' });
+    return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
   }
 
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT || '587'), // Default to 587 if undefined
-    secure: process.env.EMAIL_SECURE === 'true', // Boolean conversion
+    port: parseInt(process.env.EMAIL_PORT || '587'),
+    secure: process.env.EMAIL_SECURE === 'true',
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -44,11 +32,12 @@ export default async function handler(
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: 'Email sent successfully' });
-  } catch (error: any) {
+    return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
+  } catch (error) {
     console.error('Error sending email:', error);
-    res
-      .status(500)
-      .json({ error: 'Failed to send email', details: error.message });
+    return NextResponse.json(
+      { error: 'Failed to send email', details: (error as Error).message },
+      { status: 500 }
+    );
   }
 }
